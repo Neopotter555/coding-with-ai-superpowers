@@ -172,7 +172,7 @@ function App() {
   const [focusMinutes, setFocusMinutes] = useState(12);
   const [secondsLeft, setSecondsLeft] = useState(12 * 60);
   const [timerRunning, setTimerRunning] = useState(false);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(true);
   const [coachProfile, setCoachProfile] = useState<CoachProfile>(loadCoachProfile);
   const [promptForm, setPromptForm] = useState<PromptForm>({
     tool: "Codex",
@@ -184,7 +184,7 @@ function App() {
   });
 
   useEffect(() => {
-    setDark(localStorage.getItem(themeKey) === "dark");
+    setDark(localStorage.getItem(themeKey) !== "light");
   }, []);
 
   useEffect(() => {
@@ -471,7 +471,7 @@ function Dashboard({
           </div>
           <span className="eyebrow">
             <Flame size={16} />
-            50 missions · 40+ recall checks · deployable capstone
+            For builders and ADHD brains · 50 missions
           </span>
           <h2>Coding With AI Superpowers</h2>
           <p>
@@ -501,33 +501,40 @@ function Dashboard({
               <span />
               <span />
               <span />
-              <strong>CH-01 · INSTALL</strong>
+              <strong>PLAYBOOK · AGENT LOOP</strong>
             </div>
-            <pre>{`// your first agent loop
-const brief = {
-  goal: "ship a tiny app",
-  context: "Vite + React",
-  doneWhen: "build passes"
-};
-
-await codex.run(brief);`}</pre>
+            <pre>{`model routing
+  planning    Claude Code
+  execution   Codex
+  review      Codex /review
+  ship        Netlify + GitHub`}</pre>
           </article>
           <article className="exam-window">
             <div className="window-bar">
               <span />
               <span />
               <span />
-              <strong>CHAPTER EXAM</strong>
+              <strong>PLAYBOOK · MODEL ROUTING</strong>
             </div>
-            <p>QUESTION 3 OF 5</p>
-            <h3>Where should your API key live?</h3>
-            <div className="answer correct">
-              <Check size={16} />
-              In a server-side environment variable
+            <p>MODEL ROUTING</p>
+            <h3>Choose the right agent for the job.</h3>
+            <div className="answer routing-row correct">
+              <span>Planning / synthesis</span>
+              <strong>Claude Code</strong>
             </div>
-            <div className="answer">In client-side JavaScript</div>
-            <div className="answer">Committed to your git repo</div>
-            <strong className="xp-line">+100 XP on a first pass</strong>
+            <div className="answer routing-row">
+              <span>Execution / tools</span>
+              <strong>Codex</strong>
+            </div>
+            <div className="answer routing-row">
+              <span>Review / tests</span>
+              <strong>Codex review</strong>
+            </div>
+            <div className="answer routing-row">
+              <span>Ship / verify</span>
+              <strong>Netlify</strong>
+            </div>
+            <strong className="xp-line">Small loop · clear finish · less overwhelm</strong>
           </article>
         </div>
       </section>

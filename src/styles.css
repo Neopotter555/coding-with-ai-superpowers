@@ -1,77 +1,77 @@
 :root {
-  color-scheme: light;
+  color-scheme: dark;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #e5dbcd;
-  color: #181512;
-  --bg: #e5dbcd;
-  --bg-2: #d5c8b8;
-  --panel: #fffaf1;
-  --panel-strong: #fffdf7;
-  --ink: #181512;
-  --muted: #403a34;
-  --faint: #6d6257;
-  --line: rgb(42 35 28 / 22%);
-  --line-strong: rgb(42 35 28 / 36%);
-  --orange: #985d49;
-  --orange-2: #ad7561;
-  --amber: #8d7556;
-  --green: #5d8d68;
-  --code: #24211d;
-  --code-ink: #f6efe5;
-  --button-ink: #fff9f1;
-  --surface-soft: rgb(42 35 28 / 8%);
-  --surface-softer: rgb(42 35 28 / 5%);
-  --accent-soft: rgb(152 93 73 / 12%);
-  --accent-line: rgb(152 93 73 / 34%);
-  --accent-line-strong: rgb(152 93 73 / 52%);
-  --accent-glow: rgb(152 93 73 / 8%);
-  --ambient-glow: rgb(141 117 86 / 7%);
-  --grid-line: rgb(42 35 28 / 9%);
-  --shell-bg: rgb(255 250 241 / 94%);
-  --shell-menu-bg: rgb(255 250 241 / 98%);
-  --scrim-bg: rgb(36 30 24 / 32%);
-  --success-soft: rgb(93 141 104 / 15%);
-  --success-line: rgb(93 141 104 / 38%);
-  --success-ink: #3f724d;
-  --shadow: 0 22px 70px rgb(72 55 37 / 16%);
+  background: #0f0c08;
+  color: #f3eadf;
+  --bg: #0f0c08;
+  --bg-2: #17110b;
+  --panel: rgb(31 25 18 / 84%);
+  --panel-strong: rgb(38 31 23 / 90%);
+  --ink: #f3eadf;
+  --muted: #b1a69b;
+  --faint: #83786d;
+  --line: rgb(243 234 223 / 13%);
+  --line-strong: rgb(243 234 223 / 25%);
+  --orange: #d75a31;
+  --orange-2: #e36c42;
+  --amber: #b99b68;
+  --green: #2a8a76;
+  --code: #100d09;
+  --code-ink: #ece0d0;
+  --button-ink: #fff5ea;
+  --surface-soft: rgb(243 234 223 / 6%);
+  --surface-softer: rgb(243 234 223 / 3%);
+  --accent-soft: rgb(215 90 49 / 12%);
+  --accent-line: rgb(215 90 49 / 31%);
+  --accent-line-strong: rgb(215 90 49 / 54%);
+  --accent-glow: rgb(215 90 49 / 13%);
+  --ambient-glow: rgb(185 155 104 / 5%);
+  --grid-line: rgb(243 234 223 / 6%);
+  --shell-bg: rgb(14 11 8 / 92%);
+  --shell-menu-bg: rgb(14 11 8 / 98%);
+  --scrim-bg: rgb(0 0 0 / 44%);
+  --success-soft: rgb(42 138 118 / 13%);
+  --success-line: rgb(42 138 118 / 38%);
+  --success-ink: #78c6b4;
+  --shadow: 0 34px 110px rgb(0 0 0 / 42%);
 }
 
-:root[data-theme="dark"] {
-  color-scheme: dark;
-  background: #111315;
-  color: #f5eee5;
-  --bg: #111315;
-  --bg-2: #1a1d1f;
-  --panel: #242628;
-  --panel-strong: #2c2f31;
-  --ink: #f5eee5;
-  --muted: #d0c6bb;
-  --faint: #a99e92;
-  --line: rgb(245 238 229 / 20%);
-  --line-strong: rgb(245 238 229 / 34%);
-  --orange: #a96f5b;
-  --orange-2: #c08a75;
-  --amber: #b3a079;
-  --green: #86b58e;
-  --code: #11110f;
-  --code-ink: #eee3d4;
-  --button-ink: #fff6eb;
-  --surface-soft: rgb(245 238 229 / 8%);
-  --surface-softer: rgb(245 238 229 / 5%);
-  --accent-soft: rgb(169 111 91 / 14%);
-  --accent-line: rgb(169 111 91 / 38%);
-  --accent-line-strong: rgb(169 111 91 / 56%);
-  --accent-glow: rgb(169 111 91 / 10%);
-  --ambient-glow: rgb(179 160 121 / 7%);
-  --grid-line: rgb(245 238 229 / 6%);
-  --shell-bg: rgb(17 19 21 / 94%);
-  --shell-menu-bg: rgb(17 19 21 / 98%);
-  --scrim-bg: rgb(0 0 0 / 38%);
-  --success-soft: rgb(134 181 142 / 16%);
-  --success-line: rgb(134 181 142 / 42%);
-  --success-ink: #a5d4ad;
-  --shadow: 0 28px 88px rgb(0 0 0 / 34%);
+:root[data-theme="light"] {
+  color-scheme: light;
+  background: #e4d8c8;
+  color: #18130f;
+  --bg: #e4d8c8;
+  --bg-2: #d2c2af;
+  --panel: #fff8ef;
+  --panel-strong: #fffdf8;
+  --ink: #18130f;
+  --muted: #3f382f;
+  --faint: #6b6054;
+  --line: rgb(35 27 20 / 22%);
+  --line-strong: rgb(35 27 20 / 34%);
+  --orange: #a95838;
+  --orange-2: #b96747;
+  --amber: #8d7350;
+  --green: #2d7568;
+  --code: #211c17;
+  --code-ink: #f8ecdf;
+  --button-ink: #fff8ef;
+  --surface-soft: rgb(35 27 20 / 7%);
+  --surface-softer: rgb(35 27 20 / 4%);
+  --accent-soft: rgb(169 88 56 / 12%);
+  --accent-line: rgb(169 88 56 / 34%);
+  --accent-line-strong: rgb(169 88 56 / 50%);
+  --accent-glow: rgb(169 88 56 / 10%);
+  --ambient-glow: rgb(141 115 80 / 7%);
+  --grid-line: rgb(35 27 20 / 9%);
+  --shell-bg: rgb(255 248 239 / 94%);
+  --shell-menu-bg: rgb(255 248 239 / 98%);
+  --scrim-bg: rgb(34 26 19 / 34%);
+  --success-soft: rgb(45 117 104 / 13%);
+  --success-line: rgb(45 117 104 / 34%);
+  --success-ink: #255f54;
+  --shadow: 0 24px 78px rgb(61 44 28 / 15%);
 }
 
 * {
@@ -547,6 +547,29 @@ button {
 
 .answer.correct svg {
   color: var(--green);
+}
+
+.routing-row {
+  justify-content: space-between;
+}
+
+.routing-row span {
+  color: color-mix(in srgb, var(--ink) 86%, transparent);
+}
+
+.routing-row strong {
+  color: var(--faint);
+  font-weight: 800;
+}
+
+.routing-row.correct strong::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 10px;
+  border-radius: 999px;
+  background: var(--orange-2);
 }
 
 .xp-line {
