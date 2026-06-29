@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Local deploy/tool state
+.netlify/
+.gstack/
+
+# TypeScript build metadata
+*.tsbuildinfo
+
+# Emitted by accidental project-reference builds
+vite.config.js
+vite.config.d.ts
