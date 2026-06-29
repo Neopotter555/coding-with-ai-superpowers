@@ -355,7 +355,12 @@ function App() {
             <p>By Neo Potter</p>
             <h1>ADHD-friendly mastery path for Codex & Claude Code</h1>
           </div>
-          <button className="icon-button" onClick={() => setDark((value) => !value)} aria-label="Toggle theme">
+          <button
+            className="icon-button"
+            onClick={() => setDark((value) => !value)}
+            aria-label={dark ? "Switch to daytime mode" : "Switch to nighttime mode"}
+            title={dark ? "Switch to daytime mode" : "Switch to nighttime mode"}
+          >
             {dark ? <SunMedium size={20} /> : <Moon size={20} />}
           </button>
         </header>

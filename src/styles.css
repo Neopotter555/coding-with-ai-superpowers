@@ -1,28 +1,77 @@
 :root {
-  color-scheme: dark;
+  color-scheme: light;
   font-family:
     Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #130f0a;
-  color: #f7f1e8;
-  --bg: #130f0a;
-  --bg-2: #1c150f;
-  --panel: rgb(34 29 23 / 78%);
-  --panel-strong: rgb(43 36 28 / 88%);
-  --ink: #f7f1e8;
-  --muted: #afa49a;
-  --faint: #746b61;
-  --line: rgb(255 244 229 / 13%);
-  --line-strong: rgb(255 244 229 / 23%);
-  --orange: #f15a24;
-  --orange-2: #ff7a3c;
-  --amber: #d69a3a;
-  --green: #52b66f;
-  --code: #10100d;
-  --shadow: 0 34px 120px rgb(0 0 0 / 42%);
+  background: #f4efe6;
+  color: #29241e;
+  --bg: #f4efe6;
+  --bg-2: #e9dfd1;
+  --panel: rgb(255 252 246 / 88%);
+  --panel-strong: rgb(250 244 235 / 94%);
+  --ink: #29241e;
+  --muted: #625a51;
+  --faint: #8a8176;
+  --line: rgb(58 48 38 / 14%);
+  --line-strong: rgb(58 48 38 / 24%);
+  --orange: #a9654b;
+  --orange-2: #b67a64;
+  --amber: #9f845d;
+  --green: #5d8d68;
+  --code: #24211d;
+  --code-ink: #f6efe5;
+  --button-ink: #fff9f1;
+  --surface-soft: rgb(58 48 38 / 5%);
+  --surface-softer: rgb(58 48 38 / 3%);
+  --accent-soft: rgb(169 101 75 / 10%);
+  --accent-line: rgb(169 101 75 / 30%);
+  --accent-line-strong: rgb(169 101 75 / 46%);
+  --accent-glow: rgb(169 101 75 / 10%);
+  --ambient-glow: rgb(159 132 93 / 8%);
+  --grid-line: rgb(58 48 38 / 7%);
+  --shell-bg: rgb(250 245 238 / 82%);
+  --shell-menu-bg: rgb(250 245 238 / 96%);
+  --scrim-bg: rgb(36 30 24 / 32%);
+  --success-soft: rgb(93 141 104 / 15%);
+  --success-line: rgb(93 141 104 / 38%);
+  --success-ink: #3f724d;
+  --shadow: 0 24px 80px rgb(72 55 37 / 12%);
 }
 
-:root[data-theme="light"] {
+:root[data-theme="dark"] {
   color-scheme: dark;
+  background: #181613;
+  color: #eee8dd;
+  --bg: #181613;
+  --bg-2: #211d18;
+  --panel: rgb(38 33 27 / 82%);
+  --panel-strong: rgb(45 39 32 / 90%);
+  --ink: #eee8dd;
+  --muted: #b7aea4;
+  --faint: #8d8378;
+  --line: rgb(238 229 216 / 14%);
+  --line-strong: rgb(238 229 216 / 23%);
+  --orange: #b06a4f;
+  --orange-2: #c0836c;
+  --amber: #b19a70;
+  --green: #86b58e;
+  --code: #11110f;
+  --code-ink: #eee3d4;
+  --button-ink: #fff6eb;
+  --surface-soft: rgb(238 229 216 / 5%);
+  --surface-softer: rgb(238 229 216 / 3%);
+  --accent-soft: rgb(176 106 79 / 12%);
+  --accent-line: rgb(176 106 79 / 33%);
+  --accent-line-strong: rgb(176 106 79 / 48%);
+  --accent-glow: rgb(176 106 79 / 12%);
+  --ambient-glow: rgb(177 154 112 / 8%);
+  --grid-line: rgb(238 229 216 / 5%);
+  --shell-bg: rgb(24 21 18 / 86%);
+  --shell-menu-bg: rgb(24 21 18 / 96%);
+  --scrim-bg: rgb(0 0 0 / 38%);
+  --success-soft: rgb(134 181 142 / 16%);
+  --success-line: rgb(134 181 142 / 42%);
+  --success-ink: #a5d4ad;
+  --shadow: 0 30px 96px rgb(0 0 0 / 30%);
 }
 
 * {
@@ -38,9 +87,9 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background:
-    radial-gradient(circle at 10% 28%, rgb(241 90 36 / 20%), transparent 22rem),
-    radial-gradient(circle at 85% 18%, rgb(214 154 58 / 9%), transparent 28rem),
-    linear-gradient(180deg, #17110c 0%, #0f0c09 68%, #15100c 100%);
+    radial-gradient(circle at 10% 28%, var(--accent-glow), transparent 24rem),
+    radial-gradient(circle at 85% 18%, var(--ambient-glow), transparent 30rem),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 66%, var(--bg) 100%);
   color: var(--ink);
 }
 
@@ -50,10 +99,10 @@ body::before {
   inset: 0;
   z-index: -2;
   background-image:
-    linear-gradient(rgb(255 255 255 / 6%) 1px, transparent 1px),
-    linear-gradient(90deg, rgb(255 255 255 / 6%) 1px, transparent 1px);
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 68px 68px;
-  mask-image: linear-gradient(180deg, rgb(0 0 0 / 92%), rgb(0 0 0 / 28%) 72%, transparent);
+  mask-image: linear-gradient(180deg, rgb(0 0 0 / 72%), rgb(0 0 0 / 20%) 72%, transparent);
 }
 
 body::after {
@@ -61,7 +110,7 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(90deg, rgb(80 31 15 / 18%), transparent 36%, rgb(0 0 0 / 22%));
+  background: linear-gradient(90deg, var(--accent-glow), transparent 38%, rgb(0 0 0 / 4%));
   pointer-events: none;
 }
 
@@ -91,7 +140,7 @@ button {
   min-height: 88px;
   padding: 0 clamp(20px, 8vw, 120px);
   border-bottom: 1px solid var(--line);
-  background: rgb(17 13 9 / 82%);
+  background: var(--shell-bg);
   backdrop-filter: blur(22px);
 }
 
@@ -151,7 +200,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 10px;
   color: var(--ink);
-  background: rgb(255 244 229 / 5%);
+  background: var(--surface-soft);
 }
 
 .nav-button {
@@ -171,8 +220,8 @@ button {
 
 .nav-button.active {
   color: var(--ink);
-  border-color: rgb(241 90 36 / 45%);
-  background: rgb(241 90 36 / 12%);
+  border-color: var(--accent-line-strong);
+  background: var(--accent-soft);
 }
 
 .nav-button.active svg {
@@ -187,7 +236,7 @@ button {
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgb(255 244 229 / 4%);
+  background: var(--surface-soft);
 }
 
 .sidebar-progress > div:first-child {
@@ -224,13 +273,13 @@ button {
   height: 8px;
   overflow: hidden;
   border-radius: 999px;
-  background: rgb(255 244 229 / 10%);
+  background: var(--surface-soft);
 }
 
 .progress-track span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, var(--orange), var(--orange-2), #f5e7cf);
+  background: linear-gradient(90deg, var(--orange), var(--orange-2), var(--amber));
 }
 
 .main {
@@ -278,12 +327,12 @@ button {
 
 .hero-panel {
   position: relative;
-  min-height: min(780px, calc(100vh - 160px));
+  min-height: min(720px, calc(100vh - 150px));
   display: grid;
   grid-template-columns: minmax(320px, 0.94fr) minmax(420px, 1.06fr);
   align-items: center;
   gap: clamp(28px, 5vw, 72px);
-  padding: clamp(52px, 8vw, 120px) 0 clamp(76px, 10vw, 150px);
+  padding: clamp(48px, 7vw, 104px) 0 clamp(64px, 8vw, 118px);
   border-bottom: 1px solid var(--line);
 }
 
@@ -292,7 +341,7 @@ button {
   position: absolute;
   inset: 17% auto 0 -8vw;
   width: min(620px, 62vw);
-  background: linear-gradient(90deg, rgb(241 90 36 / 18%), transparent);
+  background: linear-gradient(90deg, var(--accent-glow), transparent);
   filter: blur(10px);
   pointer-events: none;
 }
@@ -311,8 +360,8 @@ button {
   margin-bottom: 26px;
   border-radius: 12px;
   color: var(--orange-2);
-  background: rgb(241 90 36 / 16%);
-  box-shadow: inset 0 0 0 1px rgb(241 90 36 / 16%);
+  background: var(--accent-soft);
+  box-shadow: inset 0 0 0 1px var(--accent-line);
 }
 
 .eyebrow {
@@ -327,9 +376,9 @@ button {
   margin: 22px 0 18px;
   max-width: 980px;
   color: var(--ink);
-  font-size: clamp(3.2rem, 7.8vw, 6.8rem);
-  line-height: 0.9;
-  letter-spacing: -0.055em;
+  font-size: clamp(2.9rem, 6.6vw, 5.9rem);
+  line-height: 0.94;
+  letter-spacing: -0.045em;
 }
 
 .hero-copy p,
@@ -338,20 +387,20 @@ button {
   margin: 0;
   color: var(--muted);
   font-size: clamp(1.08rem, 1.8vw, 1.38rem);
-  line-height: 1.68;
+  line-height: 1.74;
 }
 
 .hero-meta {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 18px;
-  margin-top: 36px;
+  margin-top: 32px;
 }
 
 .hero-meta span + span::before {
   content: "·";
   margin-right: 18px;
-  color: rgb(255 244 229 / 26%);
+  color: var(--faint);
 }
 
 .hero-actions,
@@ -376,22 +425,22 @@ button {
 }
 
 .primary-action {
-  color: #fff4e8;
-  border-color: rgb(241 90 36 / 68%);
-  background: linear-gradient(180deg, #ff6a32, #e84717);
-  box-shadow: 0 16px 40px rgb(241 90 36 / 22%);
+  color: var(--button-ink);
+  border-color: var(--accent-line-strong);
+  background: linear-gradient(180deg, var(--orange-2), var(--orange));
+  box-shadow: 0 14px 34px var(--accent-glow);
 }
 
 .secondary-action {
   color: var(--ink);
-  background: rgb(255 244 229 / 7%);
+  background: var(--surface-soft);
   border-color: var(--line-strong);
 }
 
 .secondary-action.light {
   min-height: 38px;
   color: var(--ink);
-  background: rgb(255 244 229 / 7%);
+  background: var(--surface-soft);
   border-color: var(--line);
 }
 
@@ -410,7 +459,7 @@ button {
   position: absolute;
   border: 1px solid var(--line-strong);
   border-radius: 16px;
-  background: linear-gradient(180deg, rgb(43 38 31 / 84%), rgb(30 25 20 / 82%));
+  background: linear-gradient(180deg, var(--panel-strong), var(--panel));
   box-shadow: var(--shadow);
   backdrop-filter: blur(18px);
 }
@@ -443,7 +492,7 @@ button {
   width: 12px;
   height: 12px;
   border-radius: 999px;
-  background: #e8dfd3;
+  background: var(--faint);
 }
 
 .window-bar strong {
@@ -453,7 +502,7 @@ button {
 .code-window pre {
   margin: 0;
   padding: 26px;
-  color: #e8dfd3;
+  color: var(--code-ink);
   font-size: clamp(0.82rem, 1.25vw, 1rem);
   line-height: 1.62;
   white-space: pre-wrap;
@@ -485,15 +534,15 @@ button {
   gap: 12px;
   margin-bottom: 12px;
   padding: 0 16px;
-  border: 1px solid rgb(255 244 229 / 10%);
+  border: 1px solid var(--line);
   border-radius: 10px;
   color: color-mix(in srgb, var(--ink) 84%, transparent);
-  background: rgb(255 244 229 / 3%);
+  background: var(--surface-softer);
 }
 
 .answer.correct {
-  border-color: rgb(241 90 36 / 84%);
-  box-shadow: 0 0 0 1px rgb(241 90 36 / 12%);
+  border-color: var(--accent-line-strong);
+  box-shadow: 0 0 0 1px var(--accent-soft);
 }
 
 .answer.correct svg {
@@ -570,7 +619,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: var(--panel);
-  box-shadow: 0 24px 80px rgb(0 0 0 / 20%);
+  box-shadow: var(--shadow);
   backdrop-filter: blur(14px);
 }
 
@@ -635,8 +684,8 @@ button {
 .segmented-control button.selected,
 .track-filters button.selected {
   color: var(--ink);
-  border-color: rgb(241 90 36 / 68%);
-  background: rgb(241 90 36 / 17%);
+  border-color: var(--accent-line-strong);
+  background: var(--accent-soft);
 }
 
 .next-panel h3,
@@ -683,9 +732,9 @@ button {
   gap: 6px;
   margin: 18px 0;
   padding: 14px;
-  border: 1px solid rgb(241 90 36 / 18%);
+  border: 1px solid var(--accent-line);
   border-radius: 12px;
-  background: rgb(241 90 36 / 8%);
+  background: var(--accent-soft);
 }
 
 .mission-box.small {
@@ -702,9 +751,9 @@ button {
 
 .complete-button.done,
 .chapter-card.complete button {
-  color: #fff4e8;
-  border-color: rgb(82 182 111 / 58%);
-  background: rgb(82 182 111 / 22%);
+  color: var(--success-ink);
+  border-color: var(--success-line);
+  background: var(--success-soft);
 }
 
 .principle-list {
@@ -751,7 +800,7 @@ button {
   padding: 0 10px;
   border-radius: 999px;
   color: var(--orange-2);
-  background: rgb(241 90 36 / 12%);
+  background: var(--accent-soft);
   font-weight: 900;
   font-size: 0.74rem;
   letter-spacing: 0.13em;
@@ -882,7 +931,7 @@ button {
 }
 
 .chapter-card.complete {
-  border-color: rgb(82 182 111 / 42%);
+  border-color: var(--success-line);
 }
 
 .chapter-topline {
@@ -945,7 +994,7 @@ button {
   border: 1px solid var(--line);
   border-radius: 10px;
   color: var(--ink);
-  background: rgb(255 244 229 / 5%);
+  background: var(--surface-soft);
   padding: 11px 12px;
 }
 
@@ -960,7 +1009,7 @@ button {
 .command-row {
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgb(255 244 229 / 4%);
+  background: var(--surface-softer);
 }
 
 .prompt-score {
@@ -984,14 +1033,14 @@ button {
   border: 1px solid var(--line);
   border-radius: 999px;
   color: var(--muted);
-  background: rgb(255 244 229 / 4%);
+  background: var(--surface-softer);
   font-size: 0.82rem;
   font-weight: 850;
 }
 
 .quality-list span.passed {
-  color: #9ce2af;
-  border-color: rgb(82 182 111 / 36%);
+  color: var(--success-ink);
+  border-color: var(--success-line);
 }
 
 .prompt-output {
@@ -1007,8 +1056,8 @@ button {
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 12px;
-  color: #f1e5d4;
-  background: #0f0f0d;
+  color: var(--code-ink);
+  background: var(--code);
   line-height: 1.58;
 }
 
@@ -1042,14 +1091,14 @@ button {
 .decision-matrix code,
 .command-row code {
   overflow-wrap: anywhere;
-  color: #f1e5d4;
+  color: var(--code-ink);
 }
 
 .decision-matrix code {
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #0f0f0d;
+  background: var(--code);
   font-size: 0.82rem;
   line-height: 1.45;
 }
@@ -1155,7 +1204,7 @@ button {
     justify-content: stretch;
     padding: 18px;
     border-right: 1px solid var(--line);
-    background: rgb(17 13 9 / 94%);
+    background: var(--shell-menu-bg);
     transition: transform 160ms ease;
   }
 
@@ -1184,8 +1233,8 @@ button {
     place-items: start end;
     padding: 100px 18px 18px;
     border: 0;
-    background: rgb(0 0 0 / 44%);
-    color: #fff;
+    background: var(--scrim-bg);
+    color: var(--button-ink);
   }
 
   .hero-panel {
