@@ -6,9 +6,9 @@ import {
   Check,
   ChevronRight,
   Clipboard,
+  Compass,
   ExternalLink,
   Filter,
-  Flame,
   Gauge,
   Github,
   LayoutDashboard,
@@ -88,6 +88,14 @@ function loadCoachProfile(): CoachProfile {
     };
   } catch {
     return coachDefaults;
+  }
+}
+
+function loadDarkTheme() {
+  try {
+    return localStorage.getItem(themeKey) !== "light";
+  } catch {
+    return true;
   }
 }
 
@@ -172,7 +180,7 @@ function App() {
   const [focusMinutes, setFocusMinutes] = useState(12);
   const [secondsLeft, setSecondsLeft] = useState(12 * 60);
   const [timerRunning, setTimerRunning] = useState(false);
-  const [dark, setDark] = useState(true);
+  const [dark, setDark] = useState(loadDarkTheme);
   const [coachProfile, setCoachProfile] = useState<CoachProfile>(loadCoachProfile);
   const [promptForm, setPromptForm] = useState<PromptForm>({
     tool: "Codex",
@@ -182,10 +190,6 @@ function App() {
     doneWhen: "Build passes, the page works on mobile, and progress survives refresh.",
     energy: "standard",
   });
-
-  useEffect(() => {
-    setDark(localStorage.getItem(themeKey) !== "light");
-  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -306,6 +310,9 @@ function App() {
     <div className="app-shell">
       <aside className={classNames("sidebar", menuOpen && "is-open")}>
         <div className="brand">
+          <button className="icon-button mobile-only menu-toggle" onClick={() => setMenuOpen(true)} aria-label="Open menu">
+            <Menu size={20} />
+          </button>
           <div className="brand-mark">np</div>
           <div>
             <span className="brand-word">
@@ -332,6 +339,14 @@ function App() {
             );
           })}
         </nav>
+        <button
+          className="icon-button header-theme-button"
+          onClick={() => setDark((value) => !value)}
+          aria-label={dark ? "Switch to daytime mode" : "Switch to nighttime mode"}
+          title={dark ? "Switch to daytime mode" : "Switch to nighttime mode"}
+        >
+          {dark ? <SunMedium size={20} /> : <Moon size={20} />}
+        </button>
         <div className="sidebar-progress">
           <div>
             <span>Course progress</span>
@@ -347,23 +362,14 @@ function App() {
       </aside>
 
       <main className="main">
-        <header className="topbar">
-          <button className="icon-button mobile-only" onClick={() => setMenuOpen(true)} aria-label="Open menu">
-            <Menu size={20} />
-          </button>
-          <div>
-            <p>By Neo Potter</p>
-            <h1>ADHD-friendly mastery path for Codex & Claude Code</h1>
-          </div>
-          <button
-            className="icon-button"
-            onClick={() => setDark((value) => !value)}
-            aria-label={dark ? "Switch to daytime mode" : "Switch to nighttime mode"}
-            title={dark ? "Switch to daytime mode" : "Switch to nighttime mode"}
-          >
-            {dark ? <SunMedium size={20} /> : <Moon size={20} />}
-          </button>
-        </header>
+        {screen !== "dashboard" && (
+          <header className="topbar">
+            <div>
+              <p>By Neo Potter</p>
+              <h1>ADHD-friendly mastery path for Codex & Claude Code</h1>
+            </div>
+          </header>
+        )}
 
         {menuOpen && (
           <button className="scrim" aria-label="Close menu" onClick={() => setMenuOpen(false)}>
@@ -467,16 +473,15 @@ function Dashboard({
       <section className="hero-panel">
         <div className="hero-copy">
           <div className="academy-icon">
-            <Sparkles size={28} />
+            <Compass size={26} />
           </div>
           <span className="eyebrow">
-            <Flame size={16} />
-            For builders and ADHD brains · 50 missions
+            For teams and builders · 50 missions
           </span>
-          <h2>Coding With AI Superpowers</h2>
+          <h2>Ship AI apps that earn their keep.</h2>
           <p>
-            A focused academy for learning OpenAI Codex and Claude Code with real projects, active
-            recall, worked examples, XP-style progress, and small shipping loops built for ADHD brains.
+            Fifty short missions for Codex, Claude Code, model routing, agent loops, testing,
+            GitHub, Netlify, and responsible AI.
           </p>
           <div className="hero-meta" aria-label="Course stats">
             <span>50 chapters</span>
@@ -496,19 +501,7 @@ function Dashboard({
           </div>
         </div>
         <div className="academy-visual" aria-hidden="true">
-          <article className="code-window">
-            <div className="window-bar">
-              <span />
-              <span />
-              <span />
-              <strong>PLAYBOOK · AGENT LOOP</strong>
-            </div>
-            <pre>{`model routing
-  planning    Claude Code
-  execution   Codex
-  review      Codex /review
-  ship        Netlify + GitHub`}</pre>
-          </article>
+          <div className="strategy-card-shadow" />
           <article className="exam-window">
             <div className="window-bar">
               <span />
@@ -517,24 +510,22 @@ function Dashboard({
               <strong>PLAYBOOK · MODEL ROUTING</strong>
             </div>
             <p>MODEL ROUTING</p>
-            <h3>Choose the right agent for the job.</h3>
             <div className="answer routing-row correct">
               <span>Planning / synthesis</span>
-              <strong>Claude Code</strong>
+              <strong>Opus 4.8</strong>
             </div>
             <div className="answer routing-row">
               <span>Execution / tools</span>
-              <strong>Codex</strong>
+              <strong>Sonnet 4.6</strong>
             </div>
             <div className="answer routing-row">
-              <span>Review / tests</span>
-              <strong>Codex review</strong>
+              <span>Extraction / volume</span>
+              <strong>Haiku 4.5</strong>
             </div>
             <div className="answer routing-row">
-              <span>Ship / verify</span>
-              <strong>Netlify</strong>
+              <span>Max mode</span>
+              <strong>Fable 5</strong>
             </div>
-            <strong className="xp-line">Small loop · clear finish · less overwhelm</strong>
           </article>
         </div>
       </section>
